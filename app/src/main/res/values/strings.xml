@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Pizzaria da Dona Cida</string>
+    <string name="rbCalabresa">Calabresa</string>
+    <string name="rbPortuguesa">Portuguesa</string>
+    <string name="rbMussarela">Mussarela</string>
+    <string name="btnCalcular">Calcular</string>
+    <string name="borda_recheada">Borda Recheada</string>
+</resources>

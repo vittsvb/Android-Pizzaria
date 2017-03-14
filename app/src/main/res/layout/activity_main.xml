@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="br.com.fiap.pizzaria.MainActivity"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rgrPizza">
+
+        <RadioButton android:text="@string/rbMussarela"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/rdMussarela"/>
+
+        <RadioButton android:text="@string/rbCalabresa"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/rdCalabresa"/>
+
+        <RadioButton android:text="@string/rbPortuguesa"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/rdPortuguesa"/>
+    </RadioGroup>
+
+    <CheckBox android:text="@string/borda_recheada"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/chBorda"/>
+
+    <Button android:text="@string/btnCalcular"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/btnCalcular"
+        android:onClick="calcular"/>
+
+
+
+</LinearLayout>
