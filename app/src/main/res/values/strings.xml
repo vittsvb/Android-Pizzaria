@@ -5,4 +5,10 @@
     <string name="rbMussarela">Mussarela</string>
     <string name="btnCalcular">Calcular</string>
     <string name="borda_recheada">Borda Recheada</string>
+    <string name="formas_de_pagamento">Formas de Pagamento:</string>
+    <string-array name="formaPagto">
+        <item>Bitcoin</item>
+        <item>Credito</item>
+        <item>Debito</item>
+    </string-array>
 </resources>

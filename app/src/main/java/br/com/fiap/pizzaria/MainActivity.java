@@ -3,18 +3,26 @@ package br.com.fiap.pizzaria;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener{
+import java.util.List;
+
+import br.com.fiap.pizzaria.javabean.FormasPagamento;
+
+public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, Spinner.OnItemSelectedListener{
 
     RadioButton rdMussarela;
     RadioButton rdCalabresa;
     RadioButton rdPortuguesa;
     RadioGroup rgrPizza;
     CheckBox chBorda;
+    Spinner spnPagamento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +34,17 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         rdPortuguesa = (RadioButton) findViewById(R.id.rdPortuguesa);
         chBorda = (CheckBox) findViewById(R.id.chBorda);
         rgrPizza = (RadioGroup) findViewById(R.id.rgrPizza);
+        spnPagamento = (Spinner) findViewById(R.id.spnPagamento);
 
+
+        List<FormasPagamento> lista = FormasPagamentoBO.getLista();
+
+        ArrayAdapter<FormasPagamento> adapter = new ArrayAdapter<FormasPagamento>(this, android.R.layout.simple_list_item_1);
+
+        spnPagamento.setAdapter(adapter);
 
         rgrPizza.setOnCheckedChangeListener(this);
+        spnPagamento.setOnItemSelectedListener(this);
     }
 
     public void onCheckedChanged (RadioGroup group, int checkedId){
@@ -40,11 +56,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         }
     }
 
-
-    public void setupUI(){
-
-
-    }
 
     public void calcular(View view){
         double total = 0;
@@ -66,4 +77,16 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         Toast.makeText(this, "Total: " + total, Toast.LENGTH_SHORT).show();
 
     }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        Toast.makeText(this, spnPagamento.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+
 }
